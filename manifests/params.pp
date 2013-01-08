@@ -12,7 +12,8 @@ class mysqlexec::params {
 	
 	case $::operatingsystem {
     'centos', 'redhat', 'fedora': {
-      #needs filling in
+      #TODO: Test that this works in these flavors
+      $zoneinfo = '/usr/share/zoneinfo'
     }
     'ubuntu', 'debian': {
       $zoneinfo = '/usr/share/zoneinfo'

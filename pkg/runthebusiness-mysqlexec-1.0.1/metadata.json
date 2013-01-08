@@ -7,7 +7,7 @@
   ],
   "checksums": {
     "templates/dbabsent.erb": "f8a1718d7c658ecaad903126db28017e",
-    "manifests/params.pp": "48d7172e210e1d5f9c58d6795433003d",
+    "manifests/params.pp": "2eb383046ff417ca711f32c11d43dd44",
     "manifests/loaddata.pp": "28c43ba018027e6733dc7889ce1b9af3",
     "templates/userpresent.erb": "7ba07c01fb79e9a90a490f3f6367af10",
     "templates/userabsent.erb": "6823c90cbfef524996903a6cc116ffe5",
@@ -21,7 +21,7 @@
     "tests/init.pp": "f386d59576d047257880ebc4f7f7ee6e",
     "manifests/db.pp": "0fcfd14e1598dbfd01974f2121b9225b",
     "templates/runcommand.erb": "0382d2ee8f69abcd4a9473fbdacc394b",
-    "Modulefile": "35b713ea8b67eb3b9c275d5defb1fd36",
+    "Modulefile": "0cbff164088cf5264997e293d9b774ce",
     "manifests/init.pp": "6be565338f976049f53f235c7a15430e"
   },
   "types": [
@@ -31,5 +31,5 @@
   "author": "runthebusiness",
   "name": "runthebusiness-mysqlexec",
   "project_page": "https://github.com/runthebusiness/puppet-mysqlexec",
-  "version": "1.0.0"
+  "version": "1.0.1"
 }
