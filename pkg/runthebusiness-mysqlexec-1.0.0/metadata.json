@@ -1,0 +1,35 @@
+{
+  "description": "mysqlexec\n\nThis class runs mysql functions from the command line.\n\nThis module does not manage the installation and configuration of mysql but is instead focused on invoking mysql commands from the command line.\n\nHere are some key features:\n\n1) The ability to run commands on a remote database instead of just on the local machine (The initial reason why we wrote the module)\n2) The ability to run *any* sql command through puppet\n3) The ability to set up unless conditions that can be written as command line execution or a mysql query\n4) Handling for the zoneinfo file\n5) Built in handling of: users / user privileges, schemas and populating table data loaded from flat files\n\nExamples:\n\nmysqlexec{\"mysqlexecexample\":\n\thost=><host to run the command on>,\n\tusername=><username>,\n\tpassword=><password>,\n\tmysqlcommand=><mysql command to run>,\n\tmysqlunless=><an mysql query that returns true or false, if true the command will not run>,\n}\n\n\nmysqlexec::db{\"mysqldbexecexample\":\n\thost=><host to run the command on>,\n\tusername=><username>,\n\tpassword=><password>,\n\tdbname=<schema to create or remove>,\n    ensure=<present or absent>,\n}\n\nmysqlexec::loaddata{\"mysqlloaddataexecexample\":\n\thost=><host to run the command on>,\n\tusername=><username>,\n\tpassword=><password>,\n\ttable=><table to load data into>,\n\tfilepath=<file to load data from>,\n\tcolumns=>[<list of columns stored in file>],\n\tcheckdata=><will bypass the other unless functions and use the built in checkdata functionality of the module, this uses the mysqlunless functionality to see if there is already data in the table>,\n\treplace=><if true then a replace will happen other wise it is an insert ignore>,\n}\n\nmysqlexec::user{\"mysqluserexecexample\":\n\thost=><host to run the command on>,\n\tusername=><username>,\n\tpassword=><password>,\n\tdbuser=><user name of the user we are managing>,\n  \tdbpassword=><a password for the user we are managing>,\n\tprivileges => [<privlileges to assign to the user>],\n\tdbname =><name of the schema to assign the privileges on>,\n\tensure=><present or absent>\n}\n\n\nThis module has been tested in debian squeeze, if you use it in another flavor and it works fine as is or if you have improvements to the params class to allow it to work in your flavor please let us know.\n\nAuthors\n-------\nWill Ferrer, Ethan Brooks\n\nLicensees\n-------\n2012 developed under license for Switchsoft LLC http://www.switchsoft.com a \"Direct response telephony company\" as part of it's \"VOIP Call distribution, ROI analysis platform, call recording, and IVR for inbound and outbound sales\" and Run the Business Systems LLC a \"Technology development investment group\" as part of it's \"PHP, Javascript rapid application development framework and MySQL analysis tools\"\n\nLicense\n-------\nLicensed under the terms of the Open Source LGPL 3.0 license.  \n\n\nContact\n-------\nwill.ferrer@runthebusiness.net\n\nSupport\n-------\n\nPlease send tickets and issues to our contact email address or at: https://github.com/runthebusiness/puppet-mysqlexec/issues\n\nProject Url\n-------\nhttps://github.com/runthebusiness/puppet-mysqlexec\n",
+  "summary": "This class runs mysql functions from the command line.",
+  "source": "UNKNOWN",
+  "dependencies": [
+
+  ],
+  "checksums": {
+    "templates/dbabsent.erb": "f8a1718d7c658ecaad903126db28017e",
+    "manifests/params.pp": "48d7172e210e1d5f9c58d6795433003d",
+    "manifests/loaddata.pp": "28c43ba018027e6733dc7889ce1b9af3",
+    "templates/userpresent.erb": "7ba07c01fb79e9a90a490f3f6367af10",
+    "templates/userabsent.erb": "6823c90cbfef524996903a6cc116ffe5",
+    "templates/loaddata.erb": "49227b2015c649d4d0c1e68250e40f1e",
+    "manifests/user.pp": "2a2c9d0d8a775ba6ec284617837946ee",
+    "templates/rununless.erb": "e1bdcc3160c75fe811b7575bf611979c",
+    "templates/dbpresent.erb": "b1c186e23739915eae956d020fc40571",
+    "manifests/loadtimezones.pp": "62f860d9a40ef9e211de782de8adc120",
+    "README": "cd972f7e3bba14f3994d919ab53f36c8",
+    "templates/checkdata.erb": "d6b88de81ff90845556a975c892640f0",
+    "tests/init.pp": "f386d59576d047257880ebc4f7f7ee6e",
+    "manifests/db.pp": "0fcfd14e1598dbfd01974f2121b9225b",
+    "templates/runcommand.erb": "0382d2ee8f69abcd4a9473fbdacc394b",
+    "Modulefile": "35b713ea8b67eb3b9c275d5defb1fd36",
+    "manifests/init.pp": "6be565338f976049f53f235c7a15430e"
+  },
+  "types": [
+
+  ],
+  "license": "Apache License, Version 2.0",
+  "author": "runthebusiness",
+  "name": "runthebusiness-mysqlexec",
+  "project_page": "https://github.com/runthebusiness/puppet-mysqlexec",
+  "version": "1.0.0"
+}
