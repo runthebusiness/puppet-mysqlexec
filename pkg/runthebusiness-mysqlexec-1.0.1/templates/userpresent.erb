@@ -1,1 +1,1 @@
-GRANT <%= priveleges.join(',') %> ON <%= @dbname %>.* TO "<%= @dbuser %>"@"<%= @host %>" <% if @dbpassword != "undef" -%> IDENTIFIED BY "<%= @dbpassword %>" <% end -%> WITH GRANT OPTION;
+GRANT <%= privileges.join(',') %> ON <%= @dbname %>.* TO "<%= @dbuser %>"@"<%= @host %>" <% if @dbpassword != "undef" -%> IDENTIFIED BY "<%= @dbpassword %>" <% end -%> WITH GRANT OPTION;
