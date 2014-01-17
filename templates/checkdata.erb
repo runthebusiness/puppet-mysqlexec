@@ -1,1 +1,4 @@
+<% if @dbname -%>
+USE <%= @dbname -%>;
+<% end -%>
 select (if ((SELECT COUNT(*) FROM <%= @table %>), true, false))

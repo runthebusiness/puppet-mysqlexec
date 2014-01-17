@@ -1,1 +1,5 @@
+<% if @dbname -%>
+mysql -h '<%= @host %>' -u'<%= @username %>' -D '<%= @dbname -%>' -p'<%= @password %>' -e '<%= @escapedcommand %>'
+<% else %>
 mysql -h '<%= @host %>' -u'<%= @username %>' -p'<%= @password %>' -e '<%= @escapedcommand %>'
+<% end -%>
