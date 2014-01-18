@@ -4,6 +4,7 @@
 #
 # Parameters:
 #  - $host: the server to run the command on (Default: undef)
+#  - $dbname: the database on use (Default: undef)
 #  - $username: the username to run the command with (Default: undef)
 #  - $password: the password to run the command with (Default: undef)
 #  - $dbname: db to load into (Default: undef)
@@ -18,6 +19,7 @@
 
 define mysqlexec::loaddata(
   $host=undef,
+  $dbname=undef,
   $username=undef,
   $password=undef,
   $table=undef,
@@ -41,6 +43,7 @@ define mysqlexec::loaddata(
     $unlesscommand = template('mysqlexec/checkdata.erb')
 	  mysqlexec{"${name}_mysqlloaddata":
 	    host=>$host,
+	    dbname=>$dbname,
 	    username=>$username,
 	    password=>$password,
 	    mysqlcommand=>$command,
@@ -50,6 +53,7 @@ define mysqlexec::loaddata(
 	} else {
 	  mysqlexec{"${name}_mysqlloaddata":
       host=>$host,
+      dbname=>$dbname,
       username=>$username,
       password=>$password,
       mysqlcommand=>$command,
