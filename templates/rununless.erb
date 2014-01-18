@@ -1,5 +1,1 @@
-<% if @dbname -%>
-mysql -h '<%= @host %>' -u'<%= @username %>' -D '<%= @dbname -%>' -p'<%= @password %>' -e '<%= @escapedunless %>' | grep 1
-<% else %>
 mysql -h '<%= @host %>' -u'<%= @username %>' -p'<%= @password %>' -e '<%= @escapedunless %>' | grep 1
-<% end -%>

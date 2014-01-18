@@ -1,5 +1,5 @@
 name 'runthebusiness-mysqlexec'
-version '1.0.2'
+version '1.2.3'
 
 author 'runthebusiness'
 license 'Apache License, Version 2.0'

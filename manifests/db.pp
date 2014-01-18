@@ -12,9 +12,9 @@
 
 define mysqlexec::db(
   $host=undef,
-  $dbname=undef,
   $username=undef,
   $password=undef,
+  $dbname=undef,
   $ensure='present',
   $logoutput='on_failure'
 ) {
@@ -22,7 +22,6 @@ define mysqlexec::db(
     $command = template('mysqlexec/dbpresent.erb')
     mysqlexec{"${name}_mysqldbpresent":
       host=>$host,
-      dbname=>$dbname,
       username=>$username,
       password=>$password,
       mysqlcommand=>$command,
@@ -32,7 +31,6 @@ define mysqlexec::db(
     $command = template('mysqlexec/dbabsent.erb')
     mysqlexec{"${name}_mysqldbabsent":
       host=>$host,
-      dbname=>$dbname,
       username=>$username,
       password=>$password,
       mysqlcommand=>$command,

@@ -4,7 +4,6 @@
 #
 # Parameters:
 #  - $host: the server to run the command on (Default: undef)
-#  - $dbname: the database on use (Default: undef)
 #  - $username: the username to run the command with (Default: undef)
 #  - $password: the password to run the command with (Default: undef)
 #  - $command: the command to run (Default: undef)
@@ -14,7 +13,6 @@
 
 define mysqlexec(
 	$host=undef,
-	$dbname=undef,
 	$username=undef,
 	$password=undef,
 	$mysqlcommand=undef,

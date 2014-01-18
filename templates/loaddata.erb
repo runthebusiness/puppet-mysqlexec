@@ -1,1 +1,1 @@
-LOAD DATA INFILE "<%= @filepath %>" <%= @loadtype %> INTO TABLE <%= @table %> FIELDS TERMINATED BY "," ENCLOSED BY "\"" LINES TERMINATED BY "\r\n" (<%= columns.join(',') %>);
+LOAD DATA <%= @flags %> INFILE "<%= @filepath %>" <%= @loadtype %> INTO TABLE <%= @table %> FIELDS TERMINATED BY "," ENCLOSED BY "\"" LINES TERMINATED BY "\r\n" (<%= columns.join(',') %>);
