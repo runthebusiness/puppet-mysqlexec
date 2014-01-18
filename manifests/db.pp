@@ -22,6 +22,7 @@ define mysqlexec::db(
     $command = template('mysqlexec/dbpresent.erb')
     mysqlexec{"${name}_mysqldbpresent":
       host=>$host,
+      dbname=>$dbname,
       username=>$username,
       password=>$password,
       mysqlcommand=>$command,
@@ -31,6 +32,7 @@ define mysqlexec::db(
     $command = template('mysqlexec/dbabsent.erb')
     mysqlexec{"${name}_mysqldbabsent":
       host=>$host,
+      dbname=>$dbname,
       username=>$username,
       password=>$password,
       mysqlcommand=>$command,

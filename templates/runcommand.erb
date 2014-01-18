@@ -1,1 +1,9 @@
-mysql -h '<%= @host %>' -u'<%= @username %>' -p'<%= @password %>' -e '<%= @escapedcommand %>'
+<% if @dbname -%>
+
+mysql -h '<%= @host %>' -u'<%= @username %>' -D '<%= @dbname -%>' -p'<%= @password %>' --local-infile=1 -e '<%= @escapedcommand %>'
+
+<% else %>
+
+mysql -h '<%= @host %>' -u'<%= @username %>' -p'<%= @password %>' --local-infile=1 -e '<%= @escapedcommand %>'
+
+<% end -%>
