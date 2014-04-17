@@ -1,5 +1,5 @@
 name 'runthebusiness-mysqlexec'
-version '1.2.5'
+version '1.3.0'
 
 author 'runthebusiness'
 license 'Apache License, Version 2.0'
@@ -67,6 +67,10 @@ This module has been tested in debian squeeze, if you use it in another flavor a
 Authors
 -------
 Will Ferrer, Ethan Brooks
+
+Contributing Authors
+-------
+Mark Cartwright, Andreyev Dias de Melo
 
 Licensees
 -------
