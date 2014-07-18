@@ -20,6 +20,7 @@ mysqlexec{"mysqlexecexample":
 	password=><password>,
 	mysqlcommand=><mysql command to run>,
 	mysqlunless=><an mysql query that returns true or false, if true the command will not run>,
+	schedule=><pre-defined schedule name>,
 }
 
 
@@ -28,7 +29,7 @@ mysqlexec::db{"mysqldbexecexample":
 	username=><username>,
 	password=><password>,
 	dbname=<schema to create or remove>,
-    ensure=<present or absent>,
+    	ensure=<present or absent>,
 }
 
 mysqlexec::loaddata{"mysqlloaddataexecexample":
